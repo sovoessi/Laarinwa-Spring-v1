@@ -21,23 +21,23 @@ public class AktivistApplication {
         SpringApplication.run(AktivistApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner runner(MugshotService mugshotService) {
-        return args -> {
-            // read json and write to db
-            ObjectMapper mapper = new ObjectMapper();
-            TypeReference<List<Mugshot>> typeReference = new TypeReference<>() {
-            };
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/data/associes.json");
-            try {
-                List<Mugshot> mugshots = mapper.readValue(inputStream, typeReference);
-//                System.out.println(mugshots);
-                mugshotService.saveAll(mugshots);
-                System.out.println("Mugshots Saved!");
-            } catch (IOException e) {
-                System.out.println("Unable to save mugshots: " + e.getMessage());
-            }
-        };
-    }
+//    @Bean
+//    CommandLineRunner runner(MugshotService mugshotService) {
+//        return args -> {
+//            // read json and write to db
+//            ObjectMapper mapper = new ObjectMapper();
+//            TypeReference<List<Mugshot>> typeReference = new TypeReference<>() {
+//            };
+//            InputStream inputStream = TypeReference.class.getResourceAsStream("/data/associes.json");
+//            try {
+//                List<Mugshot> mugshots = mapper.readValue(inputStream, typeReference);
+////                System.out.println(mugshots);
+//                mugshotService.saveAll(mugshots);
+//                System.out.println("Mugshots Saved!");
+//            } catch (IOException e) {
+//                System.out.println("Unable to save mugshots: " + e.getMessage());
+//            }
+//        };
+//    }
 
 }

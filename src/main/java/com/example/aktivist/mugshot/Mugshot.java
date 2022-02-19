@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
 @Data
 @Document(collection = "mugshots")
 @AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class Mugshot {
 
     @Id
