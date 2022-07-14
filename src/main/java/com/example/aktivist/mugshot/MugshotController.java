@@ -39,7 +39,7 @@ public class MugshotController {
     }
 
     @GetMapping("/{mugshotId}")
-    public ResponseEntity<Mugshot> fetchBookById(@PathVariable("mugshotId") String id){
+    public ResponseEntity<Mugshot> fetchMugshotById(@PathVariable("mugshotId") String id){
         Optional<Mugshot> found = mugshotService.getMugshotById(id);
         return ResponseEntity.of(found);
     }
